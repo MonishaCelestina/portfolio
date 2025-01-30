@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --navy: #0a192f;
+            --light-navy: #112240;
+            --lightest-navy: #233554;
+            --slate: #8892b0;
+            --light-slate: #a8b2d1;
+            --lightest-slate: #ccd6f6;
+            --white: #e6f1ff;
+            --green: #64ffda;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--navy);
+            color: var(--slate);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            color: var(--green);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--lightest-slate);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            color: var(--green);
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+
+        .hero-title {
+            color: var(--lightest-slate);
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: var(--slate);
+            font-size: 20px;
+            max-width: 540px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid var(--green);
+            color: var(--green);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            color: var(--lightest-slate);
+            font-size: 32px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 300px;
+            background-color: var(--lightest-navy);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .skills-list li::before {
+            content: "▹";
+            color: var(--green);
+            margin-right: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--light-navy);
+            padding: 30px;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            color: var(--lightest-slate);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 15px;
+            font-family: monospace;
+            color: var(--light-slate);
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--light-slate);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title::after {
+                width: 100px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Monisha Celestina</a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#project">Projects</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-subtitle">Hi, my name is</p>
+                    <h1 class="hero-title">Monisha Celestina.</h1>
+                    <h2 class="hero-title" style="color: var(--slate); font-size: 60px;">Building Innovation with Tech</h2>
+                    <p class="hero-description">
+                        
+I'm a Year 2 Information Technology student with a strong passion for innovation in technology. I enjoy exploring cutting-edge solutions and leveraging technology to solve real-world challenges. My goal is to continuously learn and contribute to projects that push the boundaries of what technology can achieve, whether it’s through software development, automation, or creating impactful tech-driven solutions.
+                    </p>
+                    <a href="#project" class="btn">Check out my work!</a>
+                    <a href="Monisha_CV.pdf" download class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <!-- Left Column: Text -->
+                    <div class="about-left">
+                        <p>
+                            Hello! My name is Monisha, I am a dynamic and adaptable professional with a strong foundation in teamwork and a diverse skill set in programming languages. Im passionate about leveraging creativity in web design and testing to deliver innovative solutions. Seeking a role that combines technical expertise with creative problem-solving to enhance user experiences and drive project success.
+                        </p>
+                        <br>
+                        <p>
+                            I have had experience working on various projects in school, where I collaborated with teams to develop innovative solutions. These experiences have helped me hone my skills and adapt to different challenges effectively, contributing to the success of each project.
+                        </p>
+                        <p>
+                            Here’s a breakdown of my skills and the technologies I’ve worked with:
+                        </p>
+                        <br>
+                        <!-- Skills & Technologies -->
+                        <div class="skills-technologies-container">
+                            <!-- Key Skills -->
+                            <div class="skills-section">
+                                <h3>Key Skills</h3>
+                                <ul class="skills-list">
+                                    <li>Front-End Development</li>
+                                    <li>Back-End Development</li>
+                                    <li>Responsive Design</li>
+                                    <li>API Integration</li>
+                                    <li>Debugging & Optimization</li>
+                                    <li>Cloud Deployment</li>
+                                    <li>Automated Testing</li>
+                                    <li>Project Management</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Technologies -->
+                            <div class="technologies-section">
+                                <h3>Technologies</h3>
+                                <ul class="technologies-list">
+                                    <li>JavaScript (ES6+)</li>
+                                    <li>React</li>
+                                    <li>Node.js</li>
+                                    <li>PowerBI</li>
+                                    <li>Python</li>
+                                    <li>C#</li>
+                                    <li>PHP</li>
+                                    <li>XAMPP</li>
+                                    <li>AWS</li>
+                                    <LI>JQuery</LI>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>Microsoft Office</li>
+                                    <li>MSSQL</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Right Column: Profile Image -->
+                    <div class="about-right">
+                        <img src="portfolioimg.jpg" alt="Profile picture" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="project">
+            <div class="container">
+                <h2 class="section-title">Projects I've Worked on</h2>
+                <div class="project-slider-container">
+                    <button class="prev-project" onclick="prevProjectSlide()">&#10094;</button>
+                    <div class="project-slider">
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <h3 class="project-title">Music School</h3>
+                                <p class="project-description">
+                                    A website where users can discover music lessons, find instructors, and explore school offerings.
+                                </p>
+                                <div class="project-tech">
+                                    <span>HTML/CSS</span>
+                                    <span>JQuery</span>
+                                    <span>LightSlider.js</span>
+                                </div>
+                                <a href="https://github.com/MonishaCelestina/Assignment1" target="_blank" class="github-link">
+                                    <img src="github1.png" alt="GitHub"> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <h3 class="project-title">Vinyl Record Store</h3>
+                                <p class="project-description">
+                                    The website lets users explore vinyl records, play trivia, get Spotify-based music recommendations, and buy records.
+                                </p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Express</span>
+                                    <span>Spotify API</span>
+                                    <span>Javascript</span>
+                                </div>
+                                <a href="https://github.com/MonishaCelestina/Assignment2" target="_blank" class="github-link">
+                                    <img src="github1.png" alt="GitHub"> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <h3 class="project-title">Onboarding Website</h3>
+                                <p class="project-description">
+                                    An onboarding website for program sign-ups, payments, exclusive sessions, and admin management.
+                                <div class="project-tech">
+                                    <span>ReactJS</span>
+                                    <span>MySQL</span>
+                                    <span>AWS</span>
+                                    <span>Javascript</span>
+                                </div>
+                                <a href="https://github.com/LiewZhanYang/Full-Stack-Too-Easy-" target="_blank" class="github-link">
+                                    <img src="github1.png" alt="GitHub"> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <h3 class="project-title">Healthy Living Website</h3>
+                                <p class="project-description">
+                                    A health and fitness website with user registration, meal planning, recipes, quizzes, and rewards.
+                                </p>
+                                <div class="project-tech">
+                                    <span>HTML/CSS</span>
+                                    <span>Javascript</span>
+                                    <span>MSSQL</span>
+                                    <span>Figma</span>
+                                </div>
+                                <a href="https://github.com/AppleOngPS/BED2024Apr_P02_T6" target="_blank" class="github-link">
+                                    <img src="github1.png" alt="GitHub"> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-project" onclick="nextProjectSlide()">&#10095;</button>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="achievements">
+            <div class="container">
+                <h2 class="section-title">Achievements</h2>
+                <div class="slider-container">
+                    <button class="prev" onclick="prevSlide()">&#10094;</button>
+                    <div class="slider">
+                        <div class="slide">
+                            <a href="https://www.credly.com/badges/24695a7d-0d76-4e37-87db-b10a51ff4965/public_url" target="_blank">
+                                <img src="awscloudprac.png" alt="AWS Cloud Practitioner">
+                                <p>AWS Certified Cloud Practitioner</p>
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="https://www.credly.com/badges/1ae25b6e-d1b2-442a-bf01-5591ad237984/public_url" target="_blank">
+                                <img src="scrum.png" alt="Professional Scrum Master">
+                                <p>Professional Scrum Master 1</p>
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="https://www.credly.com/badges/9a85577f-39e3-4273-a905-8fe3a7747630/public_url" target="_blank">
+                                <img src="cloudquest.png" alt="AWS Cloud Quest">
+                                <p>AWS Cloud Quest: Cloud Practitioner</p>
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="https://coursera.org/share/f36bed3132f310b93dfbfd9f623e888f" target="_blank">
+                                <img src="Google.png" alt="Agile Project Management">
+                                <p>Agile Project Management Certificate</p>
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/GJTTB4S6F910?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                                <img src="Google.png" alt="Foundations of Project Management">
+                                <p>Foundations of Project Management</p>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="next" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <section id="events">
+            <div class="container">
+                <h2 class="section-title">Events</h2>
+                <div class="events-container">
+                    <div class="event-card">
+                        <img src="IMG_8371.JPG" alt="Tech Conference 2024">
+                        <h3 class="event-title">Grab Service Learning </h3>
+                        <p class="event-description">Taught seniors to use the Grab app for booking rides, ordering food, and delivering parcels.</p>
+                    </div>
+                    <div class="event-card">
+                        <img src="bytepic.jpeg" alt="Hackathon Challenge">
+                        <h3 class="event-title">Hackathon Challenge</h3>
+                        <p class="event-description">Participated in a ByteHackz 2.5 day hackathon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+        <section id="contact">
+            <div class="container" style="text-align: center; max-width: 600px;">
+                <h2 class="section-title" style="justify-content: center;">Get In Touch</h2>
+                <p style="margin-bottom: 30px;">
+                    Although I'm not currently looking for any new opportunities, my inbox is always open. 
+                    Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                <a href="mailto:monishacelestina123@gmail.com" class="btn">Say Hello</a>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Links Section -->
+                <div class="footer-links">
+                    <a href="https://github.com/monishacelestina" target="_blank" class="footer-link">
+                        <img src="github1.png"GitHub" class="footer-icon"> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/monisha-celestina-58713023a/" target="_blank" class="footer-link">
+                        <img src="linked.png" alt="LinkedIn" class="footer-icon"> LinkedIn
+                    </a>
+                </div>
+    
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <a href="mailto:monishacelestina123@gmail.com" class="footer-link">
+                        <img src="584856b4e0bb315b0f7675ac.png" alt="Email" class="footer-icon"> monishacelestina123@gmail.com
+                    </a>
+                    <span class="footer-link">
+                        <img src="vecteezy_phone-call-icon-old-telephone-icon-calling-phone_26494837.png" alt="Phone" class="footer-icon"> 84062442
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

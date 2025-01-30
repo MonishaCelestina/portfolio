@@ -1,0 +1,576 @@
+/* Existing styles remain unchanged */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in effect for hero section */
+.hero-content {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Slide-in effects */
+.about-text {
+    animation: slideInLeft 1.2s ease-in-out;
+}
+
+.about-image {
+    animation: slideInRight 1.2s ease-in-out;
+}
+
+/* Smooth hover effect on buttons */
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(100, 255, 218, 0.2);
+}
+
+/* Hover effect on project cards */
+.project-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 4px 15px rgba(100, 255, 218, 0.2);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Achievements Section */
+.slider-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Achievement Box */
+.slide {
+    flex: 0 0 calc(100% / 3 - 20px); /* Show 3 achievements per view */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--lightest-slate);
+    padding: 20px;
+    background-color: var(--light-navy);
+    border-radius: 6px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Clickable Achievement */
+.slide a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover Effect */
+.slide:hover {
+    transform: translateY(-5px);
+    background-color: rgba(100, 255, 218, 0.15);
+}
+
+/* Achievement Logos */
+.slide img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Logo Hover Effect */
+.slide:hover img {
+    transform: scale(1.1);
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(100, 255, 218, 0.3);
+    color: var(--lightest-slate);
+    border: none;
+    padding: 12px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--green);
+    color: var(--navy);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .slide {
+        flex: 0 0 calc(100% / 2 - 20px); /* Show 2 achievements per view on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        flex: 0 0 100%; /* Show 1 achievement per view on mobile */
+    }
+}
+
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Project Slider Container */
+.project-slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 80px; /* Adds space for the navigation buttons */
+}
+
+/* Project Slider */
+.project-slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Project Slide */
+.project-slide {
+    min-width: calc(100% / 3); /* Shows 3 projects at a time */
+}
+
+/* Uniform Project Cards */
+.project-card {
+    background-color: var(--light-navy);
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 280px; /* Set uniform height */
+}
+
+/* Project Title */
+.project-title {
+    color: var(--lightest-slate);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Project Description */
+.project-description {
+    font-size: 14px;
+    color: var(--slate);
+    flex-grow: 1; /* Makes sure all descriptions align */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Technology Stack */
+.project-tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
+    font-family: monospace;
+    color: var(--light-slate);
+    margin-top: 10px;
+}
+
+/* Navigation Buttons - Moved to the Bottom */
+.project-slider-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space between slider and buttons */
+    position: relative;
+    bottom: 0;
+}
+
+/* Updated Navigation Buttons - Centered at Bottom */
+.prev-project, .next-project {
+    position: absolute;
+    bottom: -30px; /* Position at the bottom of the slider container */
+    background-color: rgba(100, 255, 218, 0.2);
+    color: var(--lightest-slate);
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-project, .next-project {
+    bottom: 10px; /* Ensure they're within the visible area */
+    left: 45%; /* Adjust to center */
+    transform: translateX(-50%);
+}
+
+.next-project {
+    left: 55%; /* Adjust to center */
+}
+
+/* Hover Effect */
+.prev-project:hover, .next-project:hover {
+    background-color: var(--green);
+    color: var(--navy);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .project-slide {
+        min-width: calc(100% / 2); /* Shows 2 projects at a time on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .project-slide {
+        min-width: 100%; /* Shows 1 project at a time on mobile */
+    }
+}
+
+
+/* Events Section */
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+/* Event Card */
+.event-card {
+    background-color: var(--light-navy);
+    border-radius: 6px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 450px; /* Make the event card bigger */
+    max-width: 100%;
+}
+
+/* Event Image */
+.event-card img {
+    width: 100%;
+    height: 250px; /* Larger images to fill space */
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Event Title */
+.event-title {
+    font-size: 22px;
+    color: var(--lightest-slate);
+    margin: 20px 0 10px;
+}
+
+/* Event Description */
+.event-description {
+    font-size: 16px;
+    color: var(--slate);
+    padding: 0 15px;
+}
+
+/* Hover Effect */
+.event-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* GitHub Link */
+.github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    color: var(--green);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 0;
+}
+
+/* GitHub Icon */
+.github-link img {
+    width: 20px; /* Adjust width */
+    height: 20px; /* Adjust height */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.github-link:hover {
+    color: var(--lightest-slate);
+}
+
+.github-link:hover img {
+    transform: scale(1.1);
+}
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: Text + Image */
+    gap: 60px; /* Increase gap for balanced spacing */
+    align-items: start; /* Align everything to the top */
+    padding-top: 20px;
+}
+
+/* Left Column: Text, Skills, and Technologies */
+.about-left {
+    max-width: 100%;
+}
+
+/* Right Column: Profile Image */
+.about-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align image to the top */
+}
+/* Technologies List in Two Rows */
+.technologies-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Spread items across 5 columns */
+    gap: 10px; /* Space between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* Profile Image */
+.about-img {
+    width: 100%;
+    max-width: 250px; /* Ensure consistent image size */
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Skills & Technologies Container */
+.skills-technologies-container {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr; /* Two sections with a divider in between */
+    gap: 30px; /* Space between sections */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: start; /* Aligns content at the top */
+}
+
+/* Vertical Divider */
+.skills-technologies-container::before {
+    content: ""; /* Pseudo-element for the line */
+    background-color: var(--light-slate);
+    width: 1px; /* Width of the line */
+    height: 100%; /* Full height */
+    grid-column: 2; /* Position the divider */
+    grid-row: 1; /* Covers the rows */
+    align-self: stretch; /* Stretches to full height */
+}
+
+/* Skills Section */
+.skills-section {
+    grid-column: 1; /* Left section */
+}
+
+/* Technologies Section */
+.technologies-section {
+    grid-column: 3; /* Right section */
+}
+
+/* Section Titles */
+.skills-section h3, .technologies-section h3 {
+    font-size: 22px; /* Slightly larger for better visibility */
+    color: var(--green);
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--green); /* Add underline for emphasis */
+    padding-bottom: 5px;
+}
+
+/* Skills & Technologies Lists */
+.skills-list, .technologies-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* List Items */
+.skills-list li, .technologies-list li {
+    font-size: 16px;
+    color: var(--light-slate);
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Bullet Points */
+.skills-list li::before, .technologies-list li::before {
+    content: "▹";
+    color: var(--green);
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .skills-technologies-container {
+        grid-template-columns: 1fr; /* Stacks sections vertically */
+    }
+
+    .skills-technologies-container::before {
+        display: none; /* Remove line on smaller screens */
+    }
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--light-navy);
+    padding: 20px 0;
+    color: var(--light-slate);
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between sections */
+}
+
+/* Footer Links Section */
+.footer-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Contact Info Section */
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Footer Link */
+.footer-link {
+    color: var(--green);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: var(--lightest-slate);
+}
+
+/* Footer Icons */
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-link:hover .footer-icon {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-content {
+        gap: 10px;
+    }
+
+    .footer-links, .footer-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
