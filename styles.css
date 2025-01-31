@@ -574,3 +574,13 @@ footer {
         gap: 10px;
     }
 }
+
+
+.event-card a:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-card a:hover h3, .event-card a:hover p {
+    color: var(--green); /* Or any highlight color you prefer */
+}
